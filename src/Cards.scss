@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700;800&display=swap');
+
+$border-radius: 4px;
+$text-color: #2e3134;
+$overlay-text-color: #ffffff;
+$link-color: #0069d2;
+
+.cards {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 120px 60px;
+
+	.card {
+		border-radius: $border-radius;
+		box-shadow: 0px 1px 2px 0px rgba(46,48,52,0.4);
+		-webkit-box-shadow: 0px 1px 2px 0px rgba(46,48,52,0.4);
+		-moz-box-shadow: 0px 1px 2px 0px rgba(46,48,52,0.4);
+		cursor: pointer;
+		flex: 0 0 21%;
+		margin: 10px;
+		min-width: 288px;
+
+		&.clicked {
+			box-shadow: 0px 8px 8px 0px rgba(46,48,52,0.3);
+			-webkit-box-shadow: 0px 8px 8px 0px rgba(46,48,52,0.3);
+			-moz-box-shadow: 0px 8px 8px 0px rgba(46,48,52,0.3);
+
+			.link-to-full-details {
+				visibility: visible;
+			}
+		}
+
+		p {
+			color: $text-color;
+			font: 700 16px "Open Sans", sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+	}
+
+	.header {
+		line-height: 0;
+		position: relative;
+
+		.overlay {
+			background: rgba(0,0,0,0.6);
+			border-top-right-radius: $border-radius;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 35%;
+
+			.count {
+				color: $overlay-text-color;
+				font-size: 24px;
+				font-weight: 800;
+			}
+
+			.descrip {
+				color: $overlay-text-color;
+				font-size: 10px;
+				margin: 7px auto 13px;
+				text-transform: uppercase;
+			}
+
+			.icon {
+				width: 20px;
+			}
+		}
+
+		.thumb {
+			border-top-left-radius: $border-radius;
+			border-top-right-radius: $border-radius;
+			width: 100%;
+		}
+	}
+
+	.details {
+		padding: 15px;
+	}
+
+	.basic-details {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		.title {
+			line-height: 19px;
+			margin: 0 10px 0 0;
+		}
+
+		.avatar {
+			width: 28px;
+		}
+	}
+
+	.more-details {
+		display: flex;
+		margin: 10px 0 0;
+
+		p {
+			display: flex;
+			font-size: 10px;
+			justify-content: center;
+			line-height: 10px;
+
+			i {
+				background-image: url('/assets/icn_timer_line.jpg');
+				background-size: 11px;
+				display: inline-block;
+				margin: 0 5px 0 0;
+				height: 10px;
+				width: 11px;
+			}
+		}
+
+		.time {
+			margin-right: 10px;
+		}
+
+		.distance i {
+			background-image: url('/assets/icn_distance_line.jpg');
+			background-size: 10px;
+			width: 10px;
+		}
+	}
+	
+	.link-to-full-details {
+		color: $link-color;
+		display: block;
+		font: 700 14px "Open Sans", sans-serif;
+		margin: 9px 0 0;
+		text-decoration: none;
+		text-transform: uppercase;
+		visibility: hidden;
+	}
+}
